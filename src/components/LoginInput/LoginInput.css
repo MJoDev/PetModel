@@ -1,0 +1,59 @@
+.form {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    margin-bottom: 15px;
+  }
+  .form input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: #4D4F5C;
+    font-family: 'Open Sans', sans-serif;
+    font: normal normal normal 18px/13px;
+    padding-top: 20px;
+    border: none;
+    outline: 0px;
+    box-shadow: 2px 3px 4px #00000029;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    padding-left: 20px;
+  }
+  .form .lbl-input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .form .lbl-input:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+  }
+  .span-input {
+    position: absolute;
+    bottom: 10px;
+    padding-left: 20px;
+    left: 0;
+    transition: all 0.3s ease;
+    color: #A4AFB7;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+  .form input:focus + .lbl-input .span-input,
+  .form input:valid + .lbl-input .span-input,
+  .form input:focus + .form input:invalid  + .lbl-input .span-input {
+    transform: translateY(-120%);
+    font-size: 11px;
+    color: #A4AFB7;
+}
+
+.form input:focus + .lbl-input:after,
+.form input:valid + .lbl-input:after {
+    transform: translateX(0%);
+  }
+
