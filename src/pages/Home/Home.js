@@ -27,11 +27,24 @@ function Home() {
             </section>
             <div class="spacer layer2"></div>
             <section class="segmented">
-            <div class="left">
-                    <h1>Left</h1>
+                <div class="left">
+                    <h1>Our Services</h1>
+                    <p>National Brand With a Local Feel. Experience the Fetch! Difference</p>
+                    <span>Enter Your Location and Fetch Our Services</span>
+                    <div>
+                        <input type="text" placeholder="Zip Code"/>
+                        <button>Search</button>
+                    </div>
                 </div>
-                <div class="right">
-                    <h1>Right</h1>
+                <div class="right services">
+                    <div>
+                        <div class="service"><img src="/assets/icons/dogw.png" alt="dog walking"></img>Dog Walking</div>
+                        <div class="service"><img src="/assets/icons/pets.png" alt="Sitting"></img>Pet Sitting</div>
+                    </div>
+                    <div>
+                        <div class="service"><img src="/assets/icons/overnight.png" alt="Overnight Care"></img>Overnight Care</div>
+                        <div class="service"><img src="/assets/icons/otherServices.png" alt="Other"></img>Other Services</div>
+                    </div>
                 </div>
             </section>
             <div class="spacer layer3"></div>
