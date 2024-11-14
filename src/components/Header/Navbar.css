@@ -1,0 +1,42 @@
+/* Estilos generales del navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    margin-right: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+  }
+  
+  /* Logo e icono de la empresa */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 10vh;
+  }
+
+  .navbar-links{
+    margin-right: 15vh;
+  }
+  /* Links de la barra de navegación */
+  .navbar-links a {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  /* Efecto hover para los enlaces */
+  .navbar-links a:hover {
+    color: #1d1d22 /* Color al pasar el cursor */
+  }

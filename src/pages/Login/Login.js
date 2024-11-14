@@ -11,22 +11,26 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
 
     const [error, setError] = useState('');
-    const [token, setToken] = useState('');  
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
-
+    const { register, handleSubmit, formState: { errors, isValid } } = useForm();
     const onSubmit = async (data) => {
         const email = data.email;
         const password = data.password;
+        setIsLoading(true);
 
         try {
             const token = await login(email, password);
-            setToken(token);
             setError('');
-
+            setIsLoading(false); // Desactiva el estado de carga después de iniciar sesión
+            localStorage.setItem('token', token);
             navigate('/home');
-        } catch (error) {
-            setError(error.message);
+        } catch (e) {
+            setError(e.message);
+            console.log(error);
             notify();
+        }finally{
+            setIsLoading(false); // Desactiva el estado de carga
         }
         
     }
@@ -42,8 +46,6 @@ function Login() {
         theme: "light",
         transition: Slide,
         });;
-
-    const { register, handleSubmit, formState: { errors } } = useForm();
 
     return (
         <div className="Login">
@@ -70,10 +72,13 @@ function Login() {
                     <LoginInput type={"password"} text={"Contraseña"} register={register("password", {required: true, minLength:6})}/>
                     {errors.email?.type === "required" && (<p id="error">El email es obligatorio</p>) }
                     {errors.password?.type === "minLength" && (<p id="error">La contrase&ntilde;a debe tener al menos 6 caracteres</p>) }
-                    <a id="forgot">¿Olvidaste tu contraseña?</a>
-                    <button type="submit" id="loginbtn" >Iniciar Sesión</button>
+                    <a id="forgot" href='/forgot'>¿Olvidaste tu contraseña?</a>
+                    <button disabled={!isValid || isLoading} type="submit" id="loginbtn" >
+                    {isLoading ? <svg xmlns="http://www.w3.org/2000/svg" class="spinner" viewBox="0 0 24 24"><path fill="currentColor" d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"><animateTransform attributeName="transform" dur="0.75s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></svg> : null}
+                    {isLoading ? "Cargando..." : "Iniciar Sesión"}
+                    </button>
                     
-                    <p id="aun">Aún no tengo cuenta <a id="register">Registrarse</a></p>
+                    <p id="aun">Aún no tengo cuenta <a id="register" href="/register">Registrarse</a></p>
                     
                 </form>
             </div>
