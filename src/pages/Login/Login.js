@@ -14,6 +14,16 @@ function Login() {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors, isValid } } = useForm();
+
+    const validateEmail = (value) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para emails
+        return emailRegex.test(value);
+    };
+
+    const validatePassword = (value) => {
+        return value.length >= 6
+    }
+
     const onSubmit = async (data) => {
         const email = data.email;
         const password = data.password;
@@ -68,8 +78,8 @@ function Login() {
             <div className="right-section">
                 <h1 id='welcome'><span id='barra'/>Bienvenido</h1>
                 <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                    <LoginInput type={"text"} text={"Email"} register={register("email", {required: true})}/>
-                    <LoginInput type={"password"} text={"Contraseña"} register={register("password", {required: true, minLength:6})}/>  
+                    <LoginInput type={"text"} text={"Email"} validate={validateEmail} register={register("email", {required: true})}/>
+                    <LoginInput type={"password"} text={"Contraseña"} validate={validatePassword} register={register("password", {required: true, minLength:6})}/>  
                     <a id="forgot" href='/forgot'>¿Olvidaste tu contraseña?</a>
                     {errors.email?.type === "required" && (<p id="error">El email es obligatorio</p>) }
                     {errors.password?.type === "minLength" && (<p id="error">La contrase&ntilde;a debe tener al menos 6 caracteres</p>) }
