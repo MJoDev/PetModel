@@ -11,6 +11,7 @@ const Navbar = () => {
         <a href="/location">Location</a>
         <a href="/blog">Blog</a>
         <a href='/home'>Home</a>
+        <a onClick={() => localStorage.clear()}>Log out</a>
       </div>
     </nav>
   );

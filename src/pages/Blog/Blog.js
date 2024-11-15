@@ -1,5 +1,5 @@
 import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Header/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 function Blog() {
 
