@@ -42,8 +42,8 @@ function Home() {
             <section className="segmented">
                 <div className="left">
                     <h1 className="ServiceTitle">Our Services</h1>
-                    <p className="homeText">National Brand With a Local Feel. Experience the Fetch! Difference</p>
-                    <span className="homeText">Enter Your Location and Fetch Our Services</span>
+                    <p className="HowItWorksSpan">National Brand With a Local Feel. Experience the Fetch! Difference</p>
+                    <span className="HowItWorksSpan">Enter Your Location and Fetch Our Services</span>
                     <div className="zip-code-form">
                         <input className="inputZip" type="text" pattern="[0-9]{5}"placeholder="Zip Code"/>
                         <button className="btnZip"><svg className="zipIco" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs></defs><title/><g data-name="Layer 2" id="Layer_2"><path d="M19,26a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42L26.59,16l-8.3-8.29a1,1,0,0,1,1.42-1.42l9,9a1,1,0,0,1,0,1.42l-9,9A1,1,0,0,1,19,26Z"/><path d="M28,17H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z"/></g><g id="frame"><rect className="cls-1"/></g></svg></button>

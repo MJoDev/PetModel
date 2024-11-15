@@ -32,7 +32,6 @@
     width: 30vw;
     height: 30vw;
     margin-left: 8vw;
-    transform: translateY(10%);
 }
 
 .notfoundTitle{
@@ -52,10 +51,13 @@
 
 .goldenSadCircle{
     position: absolute;
-    margin-top: 7.2vh;
-    margin-left: 57vw;
-    width: 33.3vw;
-    height: 50vh;
+    margin-top: 15vh;
+    margin-left: 59vw;
+    width: 32%;
+    height: 65%;
     border-radius: 50%;
     overflow: hidden;
 }
+
+
+
