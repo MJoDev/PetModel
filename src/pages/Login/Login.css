@@ -35,6 +35,7 @@
     margin-right: 20vh;
     margin-left: 20vh;
     padding: 25px;
+    margin-top: 4vh;
 }
 
 button:hover {
@@ -63,7 +64,8 @@ button:disabled {
     font: normal normal normal 14px/13px;
     color: #A4AFB7;
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-left: 32vw;
+    margin-bottom: 1vh;
     text-align: right;
     z-index: 16;
 }
@@ -137,7 +139,9 @@ form{
     color: #eb5252;
     text-transform: uppercase;
     z-index: 16;
-    animation: fadein 1s;
+    transition: ease .3s;
+    animation: fadein .3s;
+    
 }
 
 @keyframes fadein {

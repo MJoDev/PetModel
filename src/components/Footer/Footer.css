@@ -1,0 +1,36 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;  
+    width: 100%;
+    background-color: #ff5b46;
+    color: white;
+    padding: 2vh;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 20vh;
+    overflow: hidden;
+  }
+  
+  .footer-row {
+    display: grid;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    gap: 10px; 
+    margin-bottom: 20px;
+    white-space: nowrap;
+  }
+  /* Columna especial con texto amarillo */
+  .footer-row > div:first-child {
+    color: yellow;
+  }
+
+  .footer:last-child{
+    margin-right: 20vw;
+  }
+  
+  .zip-code-form{
+    max-width: 15vw;
+    max-height: 5vh;
+  }

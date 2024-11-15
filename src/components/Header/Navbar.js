@@ -8,11 +8,11 @@ const Navbar = () => {
         <img src="/logo192.png" alt="Logo" width="50px" height="50px" />
       </div>
       <div className="navbar-links">
-        <a href="#location">Location</a>
-        <a href="#blog">Blog</a>
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#franchise">Franchise with Us</a>
+        <a href="/location">Location</a>
+        <a href="/blog">Blog</a>
+        <a href="/services">Services</a>
+        <a href="/about">About Us</a>
+        <a href="/franchise">Franchise with Us</a>
       </div>
     </nav>
   );
