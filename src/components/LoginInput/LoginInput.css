@@ -57,28 +57,3 @@
     transform: translateX(0%);
   }
 
-/* General input invalid state */
-.invalid-input {
-  border-color: #FF6C4F; /* Cambia el borde a rojo */
-  color: #FF6C4F; /* Cambia el texto a rojo */
-}
-
-/* Label and placeholder in invalid state */
-.input-container.invalid .span-input {
-  color: #FF6C4F; /* Cambia el color del placeholder a rojo */
-}
-
-.input-container.invalid input:focus + .lbl-input .span-input,
-.input-container.invalid input:invalid + .lbl-input .span-input {
-  color: #FF6C4F;
-}
-
-/* Invalid input outline when focused */
-.input-container.invalid input {
-  outline: 2px solid #FF6C4F;
-}
-
-/* Placeholder flotante en estado inválido, incluso sin focus */
-.input-container.invalid input:not(:focus) + .lbl-input .span-input {
-  color: #FF6C4F;
-}
