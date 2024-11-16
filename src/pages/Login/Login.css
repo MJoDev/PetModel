@@ -139,7 +139,7 @@ form{
     color: #eb5252;
     text-transform: uppercase;
     z-index: 16;
-    transition: ease .3s;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     animation: fadein .3s;
     
 }

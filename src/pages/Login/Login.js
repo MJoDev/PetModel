@@ -68,11 +68,15 @@ function Login() {
             <div className="right-section">
                 <h1 id='welcome'><span id='barra'/>Bienvenido</h1>
                 <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                    <LoginInput type={"text"} text={"Email"} register={register("email", {required: true})}/>
+                    <LoginInput type={"text"} text={"Email"} register={register("email", {required: true, pattern: {value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/}})}/>
                     <LoginInput type={"password"} text={"Contraseña"} register={register("password", {required: true, minLength:6})}/>  
                     <a id="forgot" href='/forgot'>¿Olvidaste tu contraseña?</a>
-                    {errors.email?.type === "required" && (<p id="error">El email es obligatorio</p>) }
-                    {errors.password?.type === "minLength" && (<p id="error">La contrase&ntilde;a debe tener al menos 6 caracteres</p>) }
+                    
+                        {errors.email?.type === "required" && (<p id="error">El email es obligatorio</p>) }
+                        {errors.email?.type === "pattern" && (<p id="error">Introduzca un email valido</p>) }
+                        {errors.password?.type === "minLength" && (<p id="error">La contrase&ntilde;a debe tener al menos 6 caracteres</p>) }
+                  
+                   
                     <button disabled={!isValid || isLoading} type="submit" id="loginbtn" >
                     {isLoading ? <svg xmlns="http://www.w3.org/2000/svg" className="spinner" viewBox="0 0 24 24"><path fill="currentColor" d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"><animateTransform attributeName="transform" dur="0.75s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></svg> : null}
                     {isLoading ? "Cargando..." : "Iniciar Sesión"}
